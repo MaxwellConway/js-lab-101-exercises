@@ -1,6 +1,6 @@
 Number.isInteger =
   Number.isInteger ||
-  function(value) {
+  function (value) {
     return (
       typeof value === "number" &&
       isFinite(value) &&
@@ -24,7 +24,7 @@ function showError(element) {
   var oldClass = element.className;
   element.className += " btn-danger";
   element.innerHTML = "Hmm, not quite";
-  setTimeout(function() {
+  setTimeout(function () {
     element.className = oldClass;
     element.innerHTML = "Run";
   }, 3000);
@@ -34,7 +34,7 @@ function showSuccess(element) {
   var oldClass = element.className;
   element.className += " btn-success";
   element.innerHTML = "It works!";
-  setTimeout(function() {
+  setTimeout(function () {
     element.className = oldClass;
     element.innerHTML = "Run";
   }, 3000);
@@ -55,7 +55,7 @@ function testDeclare(element) {
 function testDeclareNumber(element) {
   try {
     var result = lvl1exercise2();
-    if (typeof result !== 'number') {
+    if (typeof result !== "number") {
       throw false;
     }
     showSuccess(element);
@@ -67,7 +67,7 @@ function testDeclareNumber(element) {
 function testDeclareFloat(element) {
   try {
     var result = lvl1exercise3();
-    if (typeof result !== 'number' || Number.isInteger(result)) {
+    if (typeof result !== "number" || Number.isInteger(result)) {
       throw false;
     }
     showSuccess(element);
@@ -105,7 +105,8 @@ function testDeclareArray(element) {
 function testDeclareObject(element) {
   try {
     var result = lvl1exercise6();
-    const valuesAreCorrect = result.key1 === "Hello World!" && result.key2 === 4;
+    const valuesAreCorrect =
+      result.key1 === "Hello World!" && result.key2 === 4;
     const objectHasTwoKeys = Object.keys(result).length === 2;
     if (!valuesAreCorrect || !objectHasTwoKeys) {
       throw false;
@@ -452,12 +453,16 @@ function testFunction(element) {
     var result = finalFunction(8);
     var result2 = finalFunction(99);
     var result3 = finalFunction(-1);
-    var result4 = finalFunction('potato');
+    var result4 = finalFunction("potato");
     if (
-      (!Array.isArray(result) || result.length !== 8) ||
-      (!Array.isArray(result2) || result2.length !== 99) ||
-      (!Array.isArray(result3) || result3.length !== 0) ||
-      (!Array.isArray(result4) || result4.length !== 0)
+      !Array.isArray(result) ||
+      result.length !== 8 ||
+      !Array.isArray(result2) ||
+      result2.length !== 99 ||
+      !Array.isArray(result3) ||
+      result3.length !== 0 ||
+      !Array.isArray(result4) ||
+      result4.length !== 0
     ) {
       throw false;
     }
